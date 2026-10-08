@@ -1,0 +1,13 @@
+{
+  "name": "online.16xbit.wardogs-display",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@elgato/streamdeck": "^3.0.0",
+    "tesseract.js": "^5.1.0"
+  },
+  "description": "Shows Wardogs HUD values on Stream Deck keys and the Neo infobar (screen capture + OCR).",
+  "license": "MIT",
+  "author": "16xbit"
+}

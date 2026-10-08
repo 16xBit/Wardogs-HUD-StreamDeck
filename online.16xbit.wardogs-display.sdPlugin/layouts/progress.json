@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+  "id": "wardogs-progress",
+  "controller": "Neo",
+  "items": [
+    { "key": "blue",  "type": "bar", "rect": [4, 3, 224, 12],  "range": { "min": 0, "max": 100 }, "value": 0, "subtype": 0, "border_w": 0, "bar_bg_c": "#1b2a3a", "bar_fill_c": "#3da5ff" },
+    { "key": "red",   "type": "bar", "rect": [4, 19, 224, 12], "range": { "min": 0, "max": 100 }, "value": 0, "subtype": 0, "border_w": 0, "bar_bg_c": "#3a1b1b", "bar_fill_c": "#ff4d4d" },
+    { "key": "green", "type": "bar", "rect": [4, 35, 224, 12], "range": { "min": 0, "max": 100 }, "value": 0, "subtype": 0, "border_w": 0, "bar_bg_c": "#1b3a24", "bar_fill_c": "#3ddc64" }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "_note": "Coordinates are pixels measured on a 3840x2160 screenshot ('reference'). Regions with an 'anchor' (left|center|right) keep their distance from that screen edge/centre and scale with screen height (vertical: from the bottom, or the top with valign:'top'); this also fits ultrawide screens. Regions without 'anchor' scale by width from the top-left. Re-read every tick. Per-region keys: threshold, mode (lum|max|sat|otsu), scale, psm, maxDigits, maxValue, maxJump, minConfidence, confirmReads, everyMs, gated (false = read even when not piloting), holdLast (true = keep the last value when nothing readable is on screen), piloting (coordinate overrides used while piloting).",
+  "reference": {
+    "width": 3840,
+    "height": 2160
+  },
+  "requireGameFocus": true,
+  "game": {
+    "_note": "Fill in the game's process name (e.g. \"Wardogs.exe\") and/or part of its window title. Enable debugSaveCrops to see the active process name in the log. While empty, the focus check is off.",
+    "processNames": ["WardogsClient-Win64-Shipping"],
+    "windowTitleContains": []
+  },
+  "allowModelDownload": false,
+  "pollMs": 300,
+  "scale": 3,
+  "threshold": 170,
+  "minConfidence": 50,
+  "confirmReads": 3,
+  "maxMisses": 5,
+  "debugSaveCrops": false,
+  "gate": {
+    "text": "ALT",
+    "region": {
+      "x": 2116,
+      "y": 1797,
+      "w": 70,
+      "h": 32,
+      "anchor": "center"
+    }
+  },
+  "regions": {
+    "speed": {
+      "x": 1674,
+      "y": 1842,
+      "w": 58,
+      "h": 34,
+      "anchor": "center",
+      "maxDigits": 3,
+      "maxJump": 60
+    },
+    "altitude": {
+      "x": 2182,
+      "y": 1842,
+      "w": 80,
+      "h": 34,
+      "anchor": "center",
+      "maxDigits": 4,
+      "maxJump": 100
+    },
+    "ammo": {
+      "x": 3492,
+      "y": 1948,
+      "w": 146,
+      "h": 60,
+      "anchor": "right",
+      "maxDigits": 4,
+      "maxJump": 400
+    },
+    "health": {
+      "x": 3712,
+      "y": 2040,
+      "w": 56,
+      "h": 30,
+      "anchor": "right",
+      "scale": 4,
+      "gated": false,
+      "maxDigits": 3,
+      "maxValue": 100,
+      "maxJump": 100,
+      "holdLast": true
+    },
+    "score_blue": {
+      "x": 70,
+      "y": 1986,
+      "w": 100,
+      "h": 46,
+      "anchor": "left",
+      "mode": "otsu",
+      "scale": 4,
+      "psm": 8,
+      "maxDigits": 3,
+      "maxValue": 100,
+      "maxJump": 30,
+      "minConfidence": 30,
+      "confirmReads": 2,
+      "everyMs": 800,
+      "gated": false,
+      "piloting": {
+        "y": 2008,
+        "h": 44
+      },
+      "holdLast": true
+    },
+    "score_red": {
+      "x": 244,
+      "y": 1986,
+      "w": 106,
+      "h": 46,
+      "anchor": "left",
+      "mode": "otsu",
+      "scale": 4,
+      "psm": 8,
+      "maxDigits": 3,
+      "maxValue": 100,
+      "maxJump": 30,
+      "minConfidence": 30,
+      "confirmReads": 2,
+      "everyMs": 800,
+      "gated": false,
+      "piloting": {
+        "y": 2008,
+        "h": 44
+      },
+      "holdLast": true
+    },
+    "score_green": {
+      "x": 412,
+      "y": 1986,
+      "w": 98,
+      "h": 46,
+      "anchor": "left",
+      "mode": "otsu",
+      "scale": 4,
+      "psm": 8,
+      "maxDigits": 3,
+      "maxValue": 100,
+      "maxJump": 30,
+      "minConfidence": 30,
+      "confirmReads": 2,
+      "everyMs": 800,
+      "gated": false,
+      "piloting": {
+        "y": 2008,
+        "h": 44
+      },
+      "holdLast": true
+    }
+  }
+}

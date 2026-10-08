@@ -1,0 +1,116 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "Wardogs HUD",
+  "Version": "0.1.0.0",
+  "Author": "16xbit",
+  "Description": "Shows Wardogs helicopter data (speed, altitude) on Stream Deck keys by reading the game HUD.",
+  "UUID": "online.16xbit.wardogs-display",
+  "Icon": "imgs/plugin-icon",
+  "CategoryIcon": "imgs/category-icon",
+  "Category": "Wardogs HUD",
+  "SDKVersion": 3,
+  "Software": {
+    "MinimumVersion": "7.6"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20"
+  },
+  "CodePath": "plugin.js",
+  "Actions": [
+    {
+      "Name": "Helicopter Speed (SPD)",
+      "UUID": "online.16xbit.wardogs-display.speed",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Helicopter speed (km/h) while piloting.",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "Name": "Helicopter Altitude (AGL)",
+      "UUID": "online.16xbit.wardogs-display.altitude",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Altitude above ground level while piloting.",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "Name": "Ammo",
+      "UUID": "online.16xbit.wardogs-display.ammo",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Current ammo count (up to 4 digits).",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "Name": "Team Score",
+      "UUID": "online.16xbit.wardogs-display.score",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Team score in the team's color. Press to cycle Blue, Red, Green.",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "Name": "Health (HP)",
+      "UUID": "online.16xbit.wardogs-display.health",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Player health, always shown (not only while piloting).",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "Name": "Team Progress (Neo Infobar)",
+      "UUID": "online.16xbit.wardogs-display.progress",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Three bars for the blue, red and green team score (0-100). Stream Deck Neo only.",
+      "Controllers": [
+        "Neo"
+      ],
+      "States": [
+        {
+          "Image": "imgs/key"
+        }
+      ]
+    }
+  ]
+}

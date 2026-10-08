@@ -1,12 +1,12 @@
 {
-  "_note": "Coordinates are pixels measured on a 3840x2160 screenshot ('reference'). Regions with an 'anchor' (left|center|right) keep their distance from that screen edge/centre and scale with screen height (vertical: from the bottom, or the top with valign:'top'); this also fits ultrawide screens. Regions without 'anchor' scale by width from the top-left. Re-read every tick. Per-region keys: threshold, mode (lum|max|sat|otsu), scale, psm, maxDigits, maxValue, maxJump, minConfidence, confirmReads, everyMs, gated (false = read even when not piloting), holdLast (true = keep the last value when nothing readable is on screen), piloting (coordinate overrides used while piloting).",
+  "_note": "Coordinates are pixels measured on a 3840x2160 reference. Regions with an 'anchor' (left|center|right) keep their distance from that screen edge/centre and scale with screen height (vertical: from the bottom, or the top with valign:'top'); this also fits ultrawide screens. Regions without 'anchor' scale by width from the top-left. Re-read every tick. Per-region keys: threshold, mode (lum|max|sat|otsu), scale, psm, maxDigits, maxValue, maxJump, minConfidence, confirmReads, everyMs, gated (false = read even when not piloting), holdLast (true = keep the last value when nothing readable is on screen), piloting (coordinate overrides used while piloting).",
   "reference": {
     "width": 3840,
     "height": 2160
   },
   "requireGameFocus": true,
   "game": {
-    "_note": "Fill in the game's process name (e.g. \"Wardogs.exe\") and/or part of its window title. Enable debugSaveCrops to see the active process name in the log. While empty, the focus check is off.",
+    "_note": "Fill in the game's process name (\"WardogsClient-Win64-Shipping\" is used by default at this time). Enable debugSaveCrops to see the active process name in the log. While empty, the focus check is off.",
     "processNames": ["WardogsClient-Win64-Shipping"],
     "windowTitleContains": []
   },

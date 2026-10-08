@@ -8,7 +8,7 @@ game's memory or files.
 > and anti-cheat policy before using any overlay or screen-reading tool. Use at your own risk.
 
 ## Keys
-| Key | Shows | Needs piloting? |
+| Key | Shows | Only updated while piloting |
 |---|---|---|
 | SPD | helicopter speed (km/h) | yes |
 | AGL | altitude above ground | yes |
@@ -31,18 +31,17 @@ npm install
 streamdeck link .
 ```
 Restart the Stream Deck app, then drag the actions from the "Wardogs HUD" category onto keys.
-The infobar action goes onto the Neo's Infobar (select the Neo in the device list first).
 After editing code or the manifest: `streamdeck restart online.16xbit.wardogs-display`.
 
 ## First-time setup: tell the plugin which window is the game
-Open `config.json` and fill in `game.processNames` (for example `["Wardogs.exe"]`) and/or
+Open `config.json` and fill in `game.processNames` (the "WardogsClient-Win64-Shipping" is used by default but can be changed if developers change the name) and/or
 `game.windowTitleContains`. While one of them is set, the plugin only captures the screen when the game is the
 active window. While both are empty the check is off and the log says so once.
-To find the process name: set `"debugSaveCrops": true`, click into the game, and read the `active process: ...`
+If you need to find the process name: set `"debugSaveCrops": true`, click into the game, and read the `active process: ...`
 line in the plugin log (`%appdata%\Elgato\StreamDeck\Plugins\online.16xbit.wardogs-display.sdPlugin\logs`).
 
 ## Other resolutions and monitors
-All coordinates in `config.json` are measured on a 3840x2160 screenshot (`reference`) and are scaled to your screen.
+All coordinates in `config.json` are measured on a 3840x2160 reference and are scaled to your screen.
 - **Any 16:9 resolution** (3840x2160, 2560x1440, 1920x1080): works with the shipped settings. At low resolutions the
   digits are small, so you may need a higher `scale` for the affected region.
 - **Other aspect ratios (ultrawide, 16:10):** regions have an `anchor` (`left`, `center` or `right`) and keep their
@@ -68,26 +67,6 @@ All coordinates in `config.json` are measured on a 3840x2160 screenshot (`refere
 - The capture helper runs as a single PowerShell script at a fixed path with `-ExecutionPolicy Bypass` for that one
   process (needed because files downloaded from GitHub are marked as coming from the internet). Values from
   `config.json` are validated as numbers and are never executed as commands.
-- Do not publish your `logs/` or `debug/` folders: logs contain your Windows and Stream Deck versions and device ID.
-  They are in `.gitignore`.
-
-## Layout
-```
-online.16xbit.wardogs-display.sdPlugin/
-  manifest.json           actions and version requirements
-  plugin.js               actions and polling loop
-  config.json             screen regions and tuning
-  layouts/progress.json   Neo infobar layout (three bars)
-  lib/capture.ps1|js      screen-region grabber (persistent PowerShell) + black/white thresholding
-  lib/geometry.js         maps reference coordinates to the real screen
-  lib/focus.js            "is the game the active window?" matching
-  lib/hud.js              OCR (tesseract.js) and the "am I piloting" check
-  lib/stabilizer.js       filters OCR misreads, optionally holds the last value
-  lib/render.js           draws the key images
-  tessdata/               bundled English OCR model
-  imgs/                   icons
-```
-Created at runtime and not part of the source: `node_modules/`, `logs/`, `debug/`.
 
 ## License
 MIT - see `LICENSE`. Third-party components: see `THIRD_PARTY_NOTICES.md`.
